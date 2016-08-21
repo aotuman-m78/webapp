@@ -22,11 +22,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="webapp" />
+        <module name="core" />
+        <module name="jdbc" />
+        <module name="scheduler" />
+        <module name="task-engine" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="webapp" target="1.5" />
+      <module name="core" target="1.5" />
+      <module name="jdbc" target="1.5" />
+      <module name="scheduler" target="1.5" />
+      <module name="task-engine" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
