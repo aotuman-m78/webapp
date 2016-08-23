@@ -1,8 +1,6 @@
 package org.zero.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.zero.base.repositories.BaseZeroRepository;
-import org.zero.core.repositories.ZeroRepository;
 import org.zero.model.User;
 
 /**
