@@ -4,7 +4,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.zero.base.repositories.BaseDatabaseTest;
-import org.zero.model.User;
+import org.zero.model.ZUser;
+
+import java.sql.SQLException;
 
 /**
  * Created by rfang on 2016/8/23.
@@ -15,8 +17,9 @@ public class UserRepositoryTest extends BaseDatabaseTest {
     @Autowired private UserRepository rep;
 
     @Test
-    public void test() {
-        User user = new User();
+    public void test() throws SQLException, ClassNotFoundException {
+
+        ZUser user = new ZUser();
         user.setName("user");
         user.setOwnerId(102L);
         user = rep.saveAndFlush(user);

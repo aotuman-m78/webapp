@@ -33,6 +33,7 @@
       <module name="jdbc" target="1.7" />
       <module name="scheduler" target="1.7" />
       <module name="task-engine" target="1.7" />
+      <module name="webapp" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

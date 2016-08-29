@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @Data @EqualsAndHashCode
 @Entity
 @Table(
-    name = "USER",
+    name = "Z_USER",
     uniqueConstraints = {
         @UniqueConstraint(
             name = "UK__USER$OWNER_ID__NAME",
@@ -24,7 +24,7 @@ import javax.validation.constraints.Size;
         )
     }
 )
-public class User extends BaseForumSharedBo {
+public class ZUser extends BaseForumSharedBo {
 
     @Size(min = 13, max = 13)
     @Column(name = "TEL")

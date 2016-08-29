@@ -16,7 +16,7 @@ import java.util.List;
 @Data @EqualsAndHashCode
 @Entity
 @Table(
-    name = "GROUP",
+    name = "Z_GROUP",
     uniqueConstraints = {
         @UniqueConstraint(
             name = "UK__GROUP$OWNER_ID__NAME",
@@ -24,7 +24,7 @@ import java.util.List;
         )
     }
 )
-public class Group extends BaseForumSharedBo {
+public class ZGroup extends BaseForumSharedBo {
 
     @Valid
     @OneToMany
@@ -51,5 +51,5 @@ public class Group extends BaseForumSharedBo {
     )
     @OrderBy("POSITION")
     @Size(max = 255)
-    private List<User> users = new ArrayList<>();
+    private List<ZUser> users = new ArrayList<>();
 }
