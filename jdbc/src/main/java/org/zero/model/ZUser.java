@@ -29,4 +29,9 @@ public class ZUser extends BaseForumSharedBo {
     @Size(min = 13, max = 13)
     @Column(name = "TEL")
     private String tel;
+
+    public static String buildCacheKey(ZUser user) {
+        StringBuilder sb = new StringBuilder();
+        return sb.append(user.getOwnerId()).append(":").append(user.getName()).toString();
+    }
 }

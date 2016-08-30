@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/scheduler/pom.xml" />
         <option value="$PROJECT_DIR$/core/pom.xml" />
         <option value="$PROJECT_DIR$/jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/metadata/pom.xml" />
       </list>
     </option>
   </component>
