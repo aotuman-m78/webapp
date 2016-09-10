@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@Commit
+@Rollback
 abstract public class BaseDatabaseTest {
 }

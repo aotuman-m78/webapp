@@ -30,11 +30,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
-      <module name="core" target="1.7" />
-      <module name="jdbc" target="1.7" />
-      <module name="metadata" target="1.7" />
-      <module name="scheduler" target="1.7" />
-      <module name="task-engine" target="1.7" />
+      <module name="core" target="1.5" />
+      <module name="jdbc" target="1.5" />
+      <module name="metadata" target="1.5" />
+      <module name="scheduler" target="1.5" />
+      <module name="task-engine" target="1.5" />
       <module name="webapp" target="1.7" />
     </bytecodeTargetLevel>
   </component>

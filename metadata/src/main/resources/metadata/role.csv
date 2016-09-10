@@ -1,0 +1,3 @@
+Control,Moderator,Manager,User
+supportDeletePost,Y,Y,N
+supportDeleteUser,Y,N,N
