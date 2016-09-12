@@ -2,10 +2,16 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.zero</groupId>
+  <parent>
+    <groupId>org.zero</groupId>
+    <artifactId>webapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
   <artifactId>scheduler</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <version>${project.parent.version}</version>
+  <packaging>war</packaging>
 
   <name>scheduler</name>
   <url>http://maven.apache.org</url>
@@ -18,26 +24,13 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
-    <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-      <version>2.8.1</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-redis</artifactId>
-      <version>1.7.2.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.zero</groupId>
       <artifactId>core</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
+      <version>${project.parent.version}</version>
     </dependency>
 
   </dependencies>
@@ -51,7 +44,7 @@
       <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
-        <version>9.2.2.v20140723</version>
+        <version>${jetty-maven-plugin.version}</version>
         <configuration>
           <webAppConfig>
             <contextPath>/${project.name}</contextPath>

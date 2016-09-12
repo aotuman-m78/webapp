@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:mvc="http://www.springframework.org/schema/mvc"
+             xmlns:util="http://www.springframework.org/schema/util"
+             xmlns:task="http://www.springframework.org/schema/task"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <mvc:annotation-driven />
+
+    <bean id="defaultPageRequest" class="org.springframework.data.domain.PageRequest">
+        <constructor-arg value="0" />
+        <constructor-arg value="100" />
+    </bean>
+
+    <bean id="sortResolver" class="org.springframework.data.web.SortHandlerMethodArgumentResolver">
+        <property name="sortParameter" value="page.sort"/>
+    </bean>
+
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver">
+                <constructor-arg ref="sortResolver" />
+                <property name="fallbackPageable" ref="defaultPageRequest"/>
+                <property name="prefix" value="page."/>
+            </bean>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+
+    <!-- TODO -->
+    <bean id="defaultAnnotationHandlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+
+    <!-- Configures view for returning JSON to the client -->
+    <bean id="mappingJackson2JsonView"
+          class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+        <property name="contentType" value="application/json" />
+    </bean>
+
+    <!-- TODO -->
+    <bean id="annotationMethodHandlerAdapter"
+          class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="supportedMethods">
+            <list>
+                <value>HEAD</value>
+                <value>GET</value>
+                <value>POST</value>
+                <value>PUT</value>
+                <value>DELETE</value>
+            </list>
+        </property>
+        <property name="messageConverters">
+            <util:list id="beanList">
+                <ref bean="jsonMessageConverter" />
+            </util:list>
+        </property>
+    </bean>
+
+    <!-- Converts JSON to POJO and vice versa -->
+    <bean id="jsonMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
+        <property name="prefixJson" value="false"/>
+        <property name="supportedMediaTypes" value="application/json"/>
+    </bean>
+
+</beans:beans>

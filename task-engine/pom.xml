@@ -1,11 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.zero</groupId>
+    <artifactId>webapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
 
-  <groupId>org.zero</groupId>
   <artifactId>task-engine</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>task-engine</name>
   <url>http://maven.apache.org</url>
@@ -18,16 +23,14 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.zero</groupId>
       <artifactId>core</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
+      <version>${project.parent.version}</version>
     </dependency>
-
 
   </dependencies>
   <build>
@@ -40,7 +43,7 @@
       <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
-        <version>9.2.2.v20140723</version>
+        <version>${jetty-maven-plugin.version}</version>
         <configuration>
           <webAppConfig>
             <contextPath>/${project.name}</contextPath>

@@ -1,10 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.zero</groupId>
+    <artifactId>webapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
 
-  <groupId>org.zero</groupId>
   <artifactId>core</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>${project.parent.version}</version>
   <packaging>jar</packaging>
 
   <name>core</name>
@@ -18,57 +23,57 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
     <dependency>
       <groupId>org.hibernate.javax.persistence</groupId>
       <artifactId>hibernate-jpa-2.1-api</artifactId>
-      <version>1.0.0.Final</version>
+      <version>${hibernate-jps-api.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>5.0.0.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
 
 
@@ -76,183 +81,196 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>5.0.0.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-jpa</artifactId>
-      <version>1.10.2.RELEASE</version>
+      <version>${spring-data-jpa.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>5.0.0.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
-      <version>1.8.9</version>
+      <version>${aspectj.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.10</version>
+      <version>${lombok.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
-      <version>1.0.25</version>
+      <version>${druid.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-redis</artifactId>
-      <version>1.5.2.RELEASE</version>
+      <version>${spring-data-redis.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/cglib/cglib -->
     <dependency>
       <groupId>cglib</groupId>
       <artifactId>cglib</artifactId>
-      <version>3.2.4</version>
+      <version>${cglib.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
     <dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
-      <version>2.7.3</version>
+      <version>${jedis-client.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/log4j/log4j -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
+      <version>${log4j.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
     <dependency>
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
-      <version>0.9.5.2</version>
+      <version>${c3p0.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.4</version>
+      <version>${commons-lang3.version}</version>
     </dependency>
       <!-- https://mvnrepository.com/artifact/org.springframework.amqp/spring-rabbit -->
       <dependency>
           <groupId>org.springframework.amqp</groupId>
           <artifactId>spring-rabbit</artifactId>
-          <version>1.6.2.RELEASE</version>
+          <version>${spring-rabbit.version}</version>
       </dependency>
       <!-- https://mvnrepository.com/artifact/org.springframework.amqp/spring-amqp -->
       <dependency>
           <groupId>org.springframework.amqp</groupId>
           <artifactId>spring-amqp</artifactId>
-          <version>1.6.2.RELEASE</version>
+          <version>${spring-amqp.version}</version>
       </dependency>
       <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
       <dependency>
           <groupId>com.rabbitmq</groupId>
           <artifactId>amqp-client</artifactId>
-          <version>3.4.4</version>
+          <version>${amqp.version}</version>
       </dependency>
     <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
     <dependency>
       <groupId>org.reflections</groupId>
       <artifactId>reflections</artifactId>
-      <version>0.9.10</version>
+      <version>${reflections.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>19.0</version>
+      <version>${guava.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
     <dependency>
       <groupId>org.quartz-scheduler</groupId>
       <artifactId>quartz</artifactId>
-      <version>2.2.1</version>
+      <version>${quartz.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <version>${spring.framework.version}</version>
     </dependency>
     <!--jetty-->
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-webapp -->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-webapp</artifactId>
-      <version>9.2.2.v20140723</version>
+      <version>${jetty.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
-      <version>9.2.2.v20140723</version>
+      <version>${jetty.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlet -->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-servlet</artifactId>
-      <version>9.2.2.v20140723</version>
+      <version>${jetty.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-util -->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-util</artifactId>
-      <version>9.2.2.v20140723</version>
+      <version>${jetty.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-security -->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-security</artifactId>
-      <version>9.2.2.v20140723</version>
+      <version>${jetty.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-http -->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-http</artifactId>
-      <version>9.2.2.v20140723</version>
+      <version>${jetty.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
 
   </dependencies>
 </project>
