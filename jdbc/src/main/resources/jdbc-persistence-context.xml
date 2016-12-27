@@ -74,16 +74,16 @@
     <!-- 数据源配置,使用Druid数据库连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
             <property name="driverClass">
-                <value>org.postgresql.Driver</value>
+                <value>${jdbc.driver}</value>
             </property>
            <property name="jdbcUrl">
-                <value>jdbc:postgresql://127.0.0.1:5432/postgres</value>
+                <value>${jdbc.url}</value>
             </property>
             <property name="user">
-                <value>postgres</value>
+                <value>${jdbc.user}</value>
             </property>
             <property name="password">
-               <value>aerohive</value>
+               <value>${jdbc.password}</value>
            </property>
     </bean>
 
